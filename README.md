@@ -1,4 +1,4 @@
-<img src="./img/baner.png"/> <br/>
+<img src="./img/my_baner.png"/> <br/>
 
 # SmartCalc_V1
 
