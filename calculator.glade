@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="graph_window">
+    <property name="can-focus">False</property>
+    <property name="default-width">440</property>
+    <property name="default-height">250</property>
+    <child>
+      <object class="GtkDrawingArea" id="drawarea">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="hexpand">True</property>
+        <property name="vexpand">True</property>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="main_window">
+    <property name="can-focus">False</property>
+    <property name="resizable">False</property>
+    <property name="default-width">700</property>
+    <property name="default-height">400</property>
+    <signal name="destroy" handler="onExit" swapped="no"/>
+    <child>
+      <!-- n-columns=8 n-rows=7 -->
+      <object class="GtkGrid" id="grid">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="row-homogeneous">True</property>
+        <property name="column-homogeneous">True</property>
+        <child>
+          <object class="GtkButton" id="pushButton_0">
+            <property name="label" translatable="yes">0</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">5</property>
+            <property name="top-attach">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_dot">
+            <property name="label" translatable="yes">.</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">4</property>
+            <property name="top-attach">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_3">
+            <property name="label" translatable="yes">3</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">3</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">6</property>
+            <property name="top-attach">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_1">
+            <property name="label" translatable="yes">1</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">4</property>
+            <property name="top-attach">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_4">
+            <property name="label" translatable="yes">4</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">4</property>
+            <property name="top-attach">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_5 ">
+            <property name="label" translatable="yes">5</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">5</property>
+            <property name="top-attach">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_7">
+            <property name="label" translatable="yes">7</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">4</property>
+            <property name="top-attach">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_8">
+            <property name="label" translatable="yes">8</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">5</property>
+            <property name="top-attach">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_plus">
+            <property name="label" translatable="yes">+</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Сложение</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">4</property>
+            <property name="top-attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_minus">
+            <property name="label" translatable="yes">-</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Вычитание</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">5</property>
+            <property name="top-attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_acos">
+            <property name="label" translatable="yes">ACOS</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">acos(x)</property>
+            <signal name="clicked" handler="pushButton_long" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">3</property>
+            <property name="top-attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_asin">
+            <property name="label" translatable="yes">ASIN</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">asin(x)</property>
+            <signal name="clicked" handler="pushButton_long" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">3</property>
+            <property name="top-attach">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_cos">
+            <property name="label" translatable="yes">COS</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">cos(x)</property>
+            <signal name="clicked" handler="pushButton_long" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">2</property>
+            <property name="top-attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_sin">
+            <property name="label" translatable="yes">SIN</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">sin(x)</property>
+            <signal name="clicked" handler="pushButton_long" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">2</property>
+            <property name="top-attach">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_atan">
+            <property name="label" translatable="yes">ATAN</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">atan(x)</property>
+            <signal name="clicked" handler="pushButton_long" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">3</property>
+            <property name="top-attach">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_tan">
+            <property name="label" translatable="yes">TAN</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">tan(x)</property>
+            <signal name="clicked" handler="pushButton_long" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">2</property>
+            <property name="top-attach">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_ln">
+            <property name="label" translatable="yes">LN</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">ln(x)</property>
+            <signal name="clicked" handler="pushButton_long" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">3</property>
+            <property name="top-attach">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_stepen">
+            <property name="label" translatable="yes">^</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Возведение в степень</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">3</property>
+            <property name="top-attach">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_sqrt">
+            <property name="label" translatable="yes">SQRT</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">sqrt(x)</property>
+            <signal name="clicked" handler="pushButton_long" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">2</property>
+            <property name="top-attach">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_log">
+            <property name="label" translatable="yes">LOG</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">log(x)</property>
+            <signal name="clicked" handler="pushButton_long" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">2</property>
+            <property name="top-attach">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_mult">
+            <property name="label" translatable="yes">*</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Умножение</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">7</property>
+            <property name="top-attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_Lscob">
+            <property name="label" translatable="yes">(</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">7</property>
+            <property name="top-attach">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_Rscob">
+            <property name="label" translatable="yes">)</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">7</property>
+            <property name="top-attach">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_dev">
+            <property name="label" translatable="yes">/</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Деление</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">6</property>
+            <property name="top-attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_9">
+            <property name="label" translatable="yes">9</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">6</property>
+            <property name="top-attach">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_6">
+            <property name="label" translatable="yes">6</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">6</property>
+            <property name="top-attach">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="show_value">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">0</property>
+            <property name="width">8</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="show_val">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">1</property>
+            <property name="width">8</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_show">
+            <property name="label" translatable="yes">=</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="pushButton_show" object="show_value" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">7</property>
+            <property name="top-attach">5</property>
+            <property name="height">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_2">
+            <property name="label" translatable="yes">2</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">5</property>
+            <property name="top-attach">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_X">
+            <property name="label" translatable="yes">X</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_mod">
+            <property name="label" translatable="yes">%</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Остаток от деления</property>
+            <signal name="clicked" handler="pushButton" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">6</property>
+            <property name="top-attach">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_graph">
+            <property name="label" translatable="yes">Graph</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="pushButton_graph" object="graph_window" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">6</property>
+            <property name="width">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_clean">
+            <property name="label" translatable="yes">AC</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">3123</property>
+            <signal name="clicked" handler="pushButton_clean" object="show_val" swapped="no"/>
+            <signal name="clicked" handler="pushButton_clean" object="show_value" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">2</property>
+            <property name="height">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="pushEntry_x_max">
+            <property name="name">X MAX</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="tooltip-text" translatable="yes">X MAX</property>
+            <property name="width-chars">4</property>
+            <property name="max-width-chars">0</property>
+            <property name="progress-pulse-step">0.08</property>
+            <property name="placeholder-text" translatable="yes">X-max</property>
+            <signal name="changed" handler="on_x_max_value_insert_text" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="pushEntry_y_max">
+            <property name="name">Y MAX</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="tooltip-text" translatable="yes">Y MAX</property>
+            <property name="width-chars">4</property>
+            <property name="placeholder-text" translatable="yes">Y-max</property>
+            <signal name="changed" handler="on_y_max_value_insert_text" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="pushEntry_X">
+            <property name="name">X</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="tooltip-text" translatable="yes">X</property>
+            <property name="width-chars">4</property>
+            <property name="max-width-chars">2</property>
+            <property name="placeholder-text" translatable="yes">X-val</property>
+            <property name="enable-emoji-completion">True</property>
+            <signal name="changed" handler="on_x_value_insert_text" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pushButton_backspase">
+            <property name="label">gtk-remove</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="use-stock">True</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="pushButton_backspase" object="show_val" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">4</property>
+            <property name="height">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

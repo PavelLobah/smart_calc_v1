@@ -1,0 +1,73 @@
+#include <check.h>
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "../s21_smart_calc.h"
+#include "../stack.h"
+
+#test calc_test1
+char str[256] = "-3+4*X";
+char postfix_expr[256] = {0};
+Stack_d stack_d;
+stack_d.size_d = 0;
+double X = 1;
+ck_assert_double_eq(calc(to_postfix(str, postfix_expr), stack_d, X), 1);
+
+#test calc_test2
+char str[256] = "SIN(45)+582*54/(5/(8-8)";
+char postfix_expr[256] = {0};
+Stack_d stack_d;
+stack_d.size_d = 0;
+double X = 1;
+ck_assert_double_nan(calc(to_postfix(str, postfix_expr), stack_d, X));
+
+#test calc_test3
+//  sin(-12) = 0.5365729180
+char str[256] = "SIN(-12)";
+char postfix_expr[256] = {0};
+double res = 0.5365729180;
+double x = 0;
+Stack_d stack_d;
+stack_d.size_d = 0;
+double my_res = calc(to_postfix(str, postfix_expr), stack_d, x);
+ck_assert_double_eq_tol(res, my_res, 1e-07);
+
+#test calc_test4
+char str[256] = "ATAN(SIN(45)+582*54/(5/(18-8))";
+char postfix_expr[256] = {0};
+double res = 1.570780417548;
+double x = 0;
+Stack_d stack_d;
+stack_d.size_d = 0;
+double my_res = calc(to_postfix(str, postfix_expr), stack_d, x);
+ck_assert_double_eq_tol(res, my_res, 1e-07);
+
+#test calc_test5
+char str[256] = "SQRT(4)*SIN(0.2)/COS(1)";
+tokenize_operator(str);
+char str_orig[256] = "q(4)*s(0.2)/c(1)";
+ck_assert_int_eq(strcmp(str_orig, str), 0);
+
+#test calc_test6
+char str[256] = "LN(LOG(100))";
+char postfix_expr[256] = {0};
+double res = 0.6931471805599453;
+double x = 0;
+Stack_d stack_d;
+stack_d.size_d = 0;
+double my_res = calc(to_postfix(str, postfix_expr), stack_d, x);
+ck_assert_double_eq_tol(res, my_res, 1e-07);
+
+#test calc_test7
+char str[256] = "0.5+0.05";
+char res[256] = {0};
+char postfix_expr[256] = {0};
+double x = 0;
+Stack_d stack_d;
+stack_d.size_d = 0;
+sprintf(res, "%.7f", calc(to_postfix(str, postfix_expr), stack_d, x));
+delete_null(res);
+char str_orig[256] = "0.55";
+ck_assert_int_eq(strcmp(str_orig, res), 0);
