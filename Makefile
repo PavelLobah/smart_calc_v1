@@ -18,7 +18,6 @@ else
 	CTEST = -lcheck --coverage
 	COVERAGE = open report/index.html
 endif
-FILE = s21_smart_calc
 
 all: clean build
 
@@ -79,8 +78,8 @@ endif
 
 clang:
 	cp ../materials/linters/.clang-format ./
-	clang-format -i ./s21_smart_calc.*
-	clang-format -n ./s21_smart_calc.*
+	clang-format -i ./smart_calc.*
+	clang-format -n ./smart_calc.*
 	clang-format -i ./tests/*
 	clang-format -n ./tests/*
 	clang-format -i ./stack.*
