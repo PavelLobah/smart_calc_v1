@@ -107,7 +107,7 @@ clean:
 git:
 	git add .
 	git commit -m "$(DATE)"
-	git push origin develop
+	git push origin master
 
 leaks: 
 	$(CC) -g ./tests/$(FILE)_test.c $(FILE).c stack.c $(CTEST) -L. -lcheck --coverage
