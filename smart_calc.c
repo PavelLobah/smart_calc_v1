@@ -1,4 +1,4 @@
-#include "mart_calc.h"
+#include "smart_calc.h"
 
 double calc(const char *str, Stack_d stack_d, double X) {
   double res = 0;
@@ -287,4 +287,26 @@ void delete_null(char *str) {
     str[i--] = 0;
   }
   str[++i] = 0;
+}
+
+int check(char *str) {
+  int check = 0;
+  if (str[0] == '\0') {
+    check = 1;
+  } else {
+    int left_bracket = 0;
+    int right_bracket = 0;
+    for (int i = 0; i < strlen(str); i++) {
+      if (str[i] == '(') {
+        left_bracket++;
+      }
+      if (str[i] == ')') {
+        right_bracket++;
+      }
+    }
+    if (left_bracket != right_bracket) {
+      check = 1;
+    }
+  }
+  return check;
 }

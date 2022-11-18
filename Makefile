@@ -3,7 +3,7 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address -lm
 VFLAGS = -Wall -Werror -Wextra -lm
 UNAME = $(shell uname)
-FILE = s21_smart_calc
+FILE = smart_calc
 STACK = ./stack.c
 GUI = ./gui.c
 SOURCE = $(STACK) $(GUI)
@@ -70,10 +70,10 @@ gcov_report: test
 
 calc: 
 ifeq ($(UNAME), Linux)
-	$(CC) -export-dynamic `pkg-config --cflags gtk+-3.0` -o main.o s21_smart_calc.c stack.c gui.c `pkg-config --libs gtk+-3.0` -lm
+	$(CC) -export-dynamic `pkg-config --cflags gtk+-3.0` -o main.o smart_calc.c stack.c gui.c `pkg-config --libs gtk+-3.0` -lm
 	./main.o
 else
-	$(CC) -o $(FILE).o  s21_smart_calc.c stack.c gui.c `pkg-config --cflags --libs gtk+-3.0`
+	$(CC) -o $(FILE).o  smart_calc.c stack.c gui.c `pkg-config --cflags --libs gtk+-3.0`
 	./$(FILE).o
 endif
 

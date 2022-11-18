@@ -20,5 +20,6 @@ int end_of_the_word(char *str, size_t i);
 double stod(const char *s);
 
 void delete_null(char *str);
+int check(char *str);
 
 #endif  // SMART_CALC_H_

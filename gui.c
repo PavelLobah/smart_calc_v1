@@ -29,7 +29,7 @@ G_MODULE_EXPORT void pushButton_show(GtkButton* btn, gpointer label1) {
   double result;
   Stack_d stack_d;
   stack_d.size_d = 0;
-  if (main_string[0] == '\0') {
+  if (check(main_string)) {
     gtk_label_set_text(label1, "INCORRECT DATA");
   } else {
     result = calc(to_postfix(main_string, postfix_expr), stack_d, val_x);
